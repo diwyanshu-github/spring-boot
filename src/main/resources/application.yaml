@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: demo
+stripe:
+  apiUrl: www.abc.com
+  enabled: true
+  timeOut: 4000
+  currencies: INR,USD

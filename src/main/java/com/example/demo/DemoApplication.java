@@ -9,13 +9,13 @@ public class DemoApplication {
 
 	public static void main(String[] args) {
         ApplicationContext context  = SpringApplication.run(DemoApplication.class, args);
-//        var orderService = context.getBean(OrderService.class);
+        var orderService = context.getBean(OrderService.class);
 //        var orderService = new OrderService(new PaypalPaymentService());
-//        orderService.processPayment();
+        orderService.processPayment();
 
-        var notificationManager = context.getBean(NotificationManager.class);
+//        var notificationManager = context.getBean(NotificationManager.class);
 //        var notificationManager = new NotificationManager(new SMSNotificationService());
-        notificationManager.sendNotification("hello");
+//        notificationManager.sendNotification("hello");
 
 
 //        var service = new SMSNotificationService();
