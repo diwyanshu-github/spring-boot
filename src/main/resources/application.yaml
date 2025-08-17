@@ -6,3 +6,4 @@ stripe:
   enabled: true
   timeOut: 4000
   currencies: INR,USD
+paymentGateway: stripe
