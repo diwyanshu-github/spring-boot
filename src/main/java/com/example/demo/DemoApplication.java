@@ -10,6 +10,7 @@ public class DemoApplication {
 	public static void main(String[] args) {
         ApplicationContext context  = SpringApplication.run(DemoApplication.class, args);
         var orderService = context.getBean(OrderService.class);
+        var heavyResource = context.getBean(HeavyResource.class);
 //        var orderService = new OrderService(new PaypalPaymentService());
         orderService.processPayment();
 
