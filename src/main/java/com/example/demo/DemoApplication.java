@@ -11,6 +11,7 @@ public class DemoApplication {
         ApplicationContext context  = SpringApplication.run(DemoApplication.class, args);
         var orderService = context.getBean(OrderService.class);
         var heavyResource = context.getBean(HeavyResource.class);
+        var heavyResource2 = context.getBean(HeavyResource.class);
 //        var orderService = new OrderService(new PaypalPaymentService());
         orderService.processPayment();
 
