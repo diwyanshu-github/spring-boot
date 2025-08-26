@@ -10,29 +10,8 @@ public class DemoApplication {
 
 	public static void main(String[] args) {
         ConfigurableApplicationContext context  = SpringApplication.run(DemoApplication.class, args);
-//        var orderService = context.getBean(OrderService.class);
-//        var heavyResource = context.getBean(HeavyResource.class);
-//        var heavyResource2 = context.getBean(HeavyResource.class);
-//        orderService.processPayment();
-//        context.close();
 
-//        var notificationManager = context.getBean(NotificationManager.class);
-//        var notificationManager = new NotificationManager(new SMSNotificationService());
-//        notificationManager.sendNotification("hello");
-
-
-//        var service = new SMSNotificationService();
-//        service = new EmailNotificationService(); // ❌ compile-time error
-//       At compile time, the type of service is fixed as SMSNotificationService.
-//        NotificationService service = new SMSNotificationService();
-//        service = new EmailNotificationService(); // ✅ allowed
-
-        User me = new User("id123","123@com", "pass3232","jones");
-        var userService =  context.getBean(UserService.class);
-        userService.registerUser(me);
-        userService.registerUser(me);
-
-
+//        SpringApplication.run(DemoApplication.class, args);
 
 	}
 }
