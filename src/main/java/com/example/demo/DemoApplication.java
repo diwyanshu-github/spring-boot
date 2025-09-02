@@ -1,6 +1,7 @@
 package com.example.demo;
 
 import com.example.demo.entities.Address;
+import com.example.demo.entities.Profile;
 import com.example.demo.entities.Tag;
 import com.example.demo.entities.User;
 import lombok.Builder;
@@ -21,10 +22,9 @@ public class DemoApplication {
 //            var user3 = new User();
 //            user3.setId(1L);
         var user = User.builder().name("abc").email("xyz@com").build();
-//        var tag = new Tag("tag1");
-        user.addTag("tag12");
-        System.out.println(user);
-        user.removeTag("tag12");
+        var profile = Profile.builder().bio("abc").build();
+
+        user.addProfile(profile);
         System.out.println(user);
 
     }
