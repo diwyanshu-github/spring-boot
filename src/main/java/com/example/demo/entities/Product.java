@@ -1,18 +1,15 @@
 package com.example.demo.entities;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.math.BigDecimal;
 
 @Getter
 @Setter
-@NoArgsConstructor
-@AllArgsConstructor
-@ToString
-@Builder
 @Entity
-@Table(name = "products")
+@Table(name = "products", schema = "store")
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,10 +19,10 @@ public class Product {
     @Column(name = "name")
     private String name;
 
-    @Column(name ="price")
+    @Column(name = "price", precision = 10, scale = 2)
     private BigDecimal price;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "category_id")
     private Category category;
 
