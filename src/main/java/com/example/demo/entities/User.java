@@ -55,6 +55,17 @@ public class User {
     @Builder.Default
     private Set<Tag> tags = new HashSet<>();
 
+    @ManyToMany
+    @JoinTable(
+            name = "wishlist",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "product_id")
+    )
+    @Builder.Default
+    private Set<Product> wishlist = new HashSet<>();
+
+
+
     public void addTag(String tag_name){
         var tag = new Tag(tag_name);
         tags.add(tag);
