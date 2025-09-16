@@ -1,6 +1,7 @@
 package com.example.demo.entities;
 
 import jakarta.persistence.*;
+import jakarta.persistence.criteria.Fetch;
 import lombok.*;
 
 @Getter
@@ -30,7 +31,7 @@ public class Address {
     @Column(name = "state")
     private String state;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "users_id")
     @ToString.Exclude
     private User user;

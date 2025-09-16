@@ -1,6 +1,7 @@
 package com.example.demo.Serives;
 
 import com.example.demo.entities.User;
+import com.example.demo.repositories.AddressRepository;
 import com.example.demo.repositories.UserRepository;
 import jakarta.persistence.EntityManager;
 import jakarta.transaction.Transactional;
@@ -12,6 +13,7 @@ import org.springframework.stereotype.Service;
 @Transactional
 public class UserService {
     private final UserRepository userRepository;
+    private final AddressRepository addressRepository;
     private EntityManager entityManager;
 
     public void showEntityStates() {
@@ -30,5 +32,11 @@ public class UserService {
         } else {
             System.out.println("User does not exist in persistence state");
         }
+    }
+
+//    @Transactional
+    public void fetchAddress(){
+        var address = addressRepository.findById(2L).orElseThrow();
+        System.out.println(address.getUser().getEmail());
     }
 }
