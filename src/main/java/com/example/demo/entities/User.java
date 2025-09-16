@@ -31,7 +31,7 @@ public class User {
     @Column(nullable = false, name ="password")
     private String password;
 
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "user", cascade = CascadeType.PERSIST)
     @Builder.Default
 //    user is data member name of address class
     private List<Address> addresses = new ArrayList<>();

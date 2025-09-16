@@ -1,5 +1,6 @@
 package com.example.demo.Serives;
 
+import com.example.demo.entities.Address;
 import com.example.demo.entities.User;
 import com.example.demo.repositories.AddressRepository;
 import com.example.demo.repositories.UserRepository;
@@ -39,4 +40,15 @@ public class UserService {
         var address = addressRepository.findById(2L).orElseThrow();
         System.out.println(address.getUser().getEmail());
     }
+
+
+    public void persistRelatedEntities(){
+        var user = User.builder().name("name-abc").email("xyz@xyz.com").password("abc").build();
+        var address = Address.builder().street("street name").zip("some-zip").city("some city").state("some state").build();
+
+        user.addAddress(address);
+        userRepository.save(user);
+    }
+
+
 }
