@@ -31,7 +31,7 @@ public class User {
     @Column(nullable = false, name ="password")
     private String password;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.PERSIST)
+    @OneToMany(mappedBy = "user", cascade = {CascadeType.PERSIST, CascadeType.REMOVE}, orphanRemoval = true)
     @Builder.Default
 //    user is data member name of address class
     private List<Address> addresses = new ArrayList<>();
@@ -82,7 +82,7 @@ public class User {
         });
     }
 
-    @OneToOne(mappedBy = "user")
+    @OneToOne(mappedBy = "user", cascade = CascadeType.REMOVE)
     private Profile profile;
 
     public void addProfile(Profile profile){

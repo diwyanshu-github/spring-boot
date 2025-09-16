@@ -14,6 +14,6 @@ public class DemoApplication {
         ApplicationContext context = SpringApplication.run(DemoApplication.class, args);
 
         var userService = context.getBean(UserService.class);
-        userService.persistRelatedEntities();
+        userService.deleteRelatedEntities();
     }
 }
